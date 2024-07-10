@@ -1,0 +1,32 @@
+services:
+  server:
+    build:
+      context: app
+    env_file:
+      - server.env
+      - common.env
+    ports:
+      - "5000:5000"
+    # networks:
+    #   - app-network
+    depends_on:
+      - db
+    restart: unless-stopped
+  db:
+    image: mysql:latest
+    env_file:
+      - common.env
+    # ports:
+    #   - "3306:3306"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - db-data:/var/lib/mysql
+      # - ./mysql_conf:/etc/mysql/conf.d
+    # networks:
+    #   - app-network
+    restart: always
+volumes:
+  db-data:
+# networks:
+#   app-network:
+#     driver: bridge
