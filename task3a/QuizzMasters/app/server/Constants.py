@@ -1,0 +1,9 @@
+RED = "\033[31m"  # error color
+GREEN = "\033[32m"  # answer is correct
+YELLOW = "\033[33m"  # wrong answer
+BLUE = "\033[34m"  # default theme color
+WHITE = "\033[47m"  # default text color
+BOLD = "\033[1m"
+UNDERLINE = "\033[4m"
+RESET = "\033[0m"
+TAB = "\t"*4
