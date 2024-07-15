@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install imagemagick -y
+
 
 touch flag.txt
 echo "Congrats! Here's your flag" > flag.txt
