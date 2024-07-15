@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install imagemagick -y
+sudo apt install imagemagick exiftool -y
 
 
 touch flag.txt
