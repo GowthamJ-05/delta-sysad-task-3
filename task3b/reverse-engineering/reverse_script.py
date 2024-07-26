@@ -12,7 +12,7 @@ secret_value = 0x5A
 for length in range(1, 11):
     input_variables = []
     for i in range(length):
-        input_variables.append(BitVec(f'char_{i}', 8))
+        input_variables.append(BitVec(f'char{i}', 8))
 
     s = Solver()
     for var in input_variables:
