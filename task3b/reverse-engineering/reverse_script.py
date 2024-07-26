@@ -16,7 +16,7 @@ for length in range(1, 11):
 
     s = Solver()
     for var in input_variables:
-        s.add(var >= 0x20, var <= 0x7E)
+        s.add(var >= 32, var <= 126) # printable ascii range
     s.add(reverse_obscure_func(input_variables) == secret_value)
 
     if s.check() == sat:
