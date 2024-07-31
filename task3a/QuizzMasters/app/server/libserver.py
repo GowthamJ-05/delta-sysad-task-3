@@ -146,7 +146,7 @@ class Message:
 
     def _write(self):
         if self.send_buffer:
-            print(f"Sending data {self.send_buffer!r} to connection {self.addr}")
+            print(f"Sending data {self.send_buffer} to connection {self.addr}")
             try:
                 sent = self.sock.send(self.send_buffer)
             except BlockingIOError:
@@ -162,11 +162,11 @@ class Message:
         try:
             self.selector.unregister(self.sock)
         except Exception as e:
-            print(f"Error: selector.unregister() exception for {self.addr!r}: {e!r}")
+            print(f"Error: selector.unregister() exception for {self.addr}: {e}")
         try:
             self.sock.close()
         except OSError as e:
-            print(f"Error: socket.close() exception for {self.addr!r}: {e!r}")
+            print(f"Error: socket.close() exception for {self.addr}: {e}")
         finally:
             self.sock = None
 
